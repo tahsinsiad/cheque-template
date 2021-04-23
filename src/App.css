@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .site-layout, .site-layout .site-layout-background {
+    background: #2d2d49; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
-  to {
-    transform: rotate(360deg);
+  .ant-menu-dark .ant-menu-item, .ant-menu-dark .ant-menu-item-group-title, .ant-menu-dark .ant-menu-item > a, .ant-menu-dark .ant-menu-item > span > a {
+      color: #fff;
   }
-}
+  .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #131e38;
+  }
+  .ant-list-item, .ant-list-item-meta-title > a, .ant-list-item-meta-description {
+      cursor: pointer;
+      color: #fff;
+      font-weight: 600;
+      transition: all .3s ease-in-out;
+  }
+  .ant-list-item-meta-title > a:hover {
+      color: #fff;
+  }
+  .ant-list-item:hover {
+      border-radius: 15px;
+      background-color: #131e38;
+      padding-left: 10px;
+      padding-right: 10px;
+      transition: all .3s ease-in-out;
+  }
+  .ant-list-split .ant-list-item {
+      border-bottom: none;
+  }
+  .ant-list-item-meta {
+      align-items: center;
+  }
