@@ -9,16 +9,18 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Switch>
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              children={<Layout>{<route.main />}</Layout>}
-            />
-          ))}
-        </Switch>
+        <Layout>
+          <Switch>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                exact={route.exact}
+                children={<route.main />}
+              />
+            ))}
+          </Switch>
+        </Layout>
       </BrowserRouter>
     </div>
   );
