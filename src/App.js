@@ -1,11 +1,25 @@
 import React from 'react';
+import { Route, Switch } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import SideNav from './components/Layout/SideNav';
+import Layout from './components/Layout';
+import { routes } from './routes';
 
 function App() {
   return (
     <div className="App">
-      <SideNav />
+      <BrowserRouter>
+        <Switch>
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              children={<Layout>{<route.main />}</Layout>}
+            />
+          ))}
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
