@@ -10,11 +10,15 @@ const LayoutBody = ({ children }) => {
         borderRadius: '15px',
       }}
     >
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div
-          className="site-layout-background"
-          style={{ padding: 24, textAlign: 'center', color: 'red' }}
-        >
+      <Content
+        className="keep-scrolling"
+        style={{
+          margin: '24px 16px 0',
+          overflow: 'hidden scroll',
+          height: '92.5vh',
+        }}
+      >
+        <div className="site-layout-background" style={{ padding: 15 }}>
           {children}
         </div>
       </Content>
