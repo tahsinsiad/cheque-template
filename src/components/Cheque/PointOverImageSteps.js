@@ -1,4 +1,4 @@
-import { Button, message, Spin, Steps } from 'antd';
+import { Button, InputNumber, message, Spin, Steps } from 'antd';
 import React from 'react';
 
 const steps = [
@@ -50,7 +50,32 @@ const PointOverImageSteps = () => {
           />
         ))}
       </Steps>
-      <div className="steps-content">{steps[current].content}</div>
+      <div
+        style={{ display: 'flex', border: '2px solid #fff', marginTop: '16px' }}
+      >
+        <div
+          style={{
+            width: '20%',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '5px',
+          }}
+        >
+          <label style={{ color: '#fff', marginBottom: '12px' }}>
+            Adjust image width
+          </label>
+          <InputNumber
+            min={0}
+            value={0}
+            style={{ width: '100%', marginBottom: '12px' }}
+          />
+          <label style={{ color: '#fff', marginBottom: '12px' }}>
+            Adjust image height
+          </label>
+          <InputNumber min={0} value={0} style={{ width: '100%' }} />
+        </div>
+        <div className="steps-content">{`Image goes here`}</div>
+      </div>
       <div className="steps-action">
         {current < steps.length - 1 && (
           <Button type="primary" onClick={() => next()}>

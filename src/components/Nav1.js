@@ -27,7 +27,7 @@ const Nav1 = () => {
         >
           <Input />
         </Form.Item>
-        <Form.Item>
+        {/* <Form.Item>
           <Form.Item
             label="Width"
             style={{
@@ -56,7 +56,7 @@ const Nav1 = () => {
           >
             <Input />
           </Form.Item>
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item
           name="chequeImg"
           label="Cheque Image"
