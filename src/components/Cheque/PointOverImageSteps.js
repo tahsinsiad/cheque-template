@@ -28,7 +28,7 @@ const steps = [
   },
 ];
 
-const PointOverImageSteps = () => {
+const PointOverImageSteps = ({ image }) => {
   const { Step } = Steps;
   const [current, setCurrent] = React.useState(0);
 
@@ -46,7 +46,7 @@ const PointOverImageSteps = () => {
           <Step
             key={item.title}
             title={item.title}
-            icon={index === current + 1 ? <Spin /> : null}
+            icon={index === current + 1 ? <Spin spinning /> : null}
           />
         ))}
       </Steps>
@@ -74,9 +74,11 @@ const PointOverImageSteps = () => {
           </label>
           <InputNumber min={0} value={0} style={{ width: '100%' }} />
         </div>
-        <div className="steps-content">{`Image goes here`}</div>
+        <div className="steps-content">
+          <img height="200px" src={image} />
+        </div>
       </div>
-      <div className="steps-action">
+      {/* <div className="steps-action">
         {current < steps.length - 1 && (
           <Button type="primary" onClick={() => next()}>
             Next
@@ -95,7 +97,7 @@ const PointOverImageSteps = () => {
             Previous
           </Button>
         )}
-      </div>
+      </div> */}
     </>
   );
 };

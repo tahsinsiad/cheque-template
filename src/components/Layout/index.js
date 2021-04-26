@@ -4,9 +4,8 @@ import PastChequeListContainer from './PastChequeListContainer';
 import SideNav from './SideNav';
 
 const Layout = ({ children }) => {
-  console.log('layout');
   return (
-    <div style={{ display: 'flex', padding: '5px' }}>
+    <div style={{ display: 'flex', background: '#24365f4f' }}>
       <SideNav />
       <LayoutBody>{children}</LayoutBody>
       <PastChequeListContainer />

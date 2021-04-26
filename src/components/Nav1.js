@@ -1,10 +1,38 @@
-import { Button, Form, Input } from 'antd';
-import React from 'react';
+import { LoadingOutlined } from '@ant-design/icons';
+import { Button, Form, Input, Spin } from 'antd';
+import React, { useEffect, useState } from 'react';
 import ChequeUploader from './Cheque/ChequeUploader';
 import PointOverImageSteps from './Cheque/PointOverImageSteps';
 
 const Nav1 = () => {
   const [form] = Form.useForm();
+  const [fileInfo, setFileInfo] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [imgSrc, setImgSrc] = useState(null);
+
+  const handleChangeUploadCheque = (info) => {
+    console.log(info);
+    setFileInfo(info);
+    setLoading(true);
+  };
+
+  const handleUploadCheque = (file) => {
+    console.log('file: ', file);
+    const reader = new FileReader();
+    reader.addEventListener('load', () => setImgSrc(reader.result));
+    reader.readAsDataURL(file);
+    setLoading(false);
+  };
+
+  const renderImageField = fileInfo ? (
+    <PointOverImageSteps image={imgSrc} />
+  ) : (
+    <ChequeUploader
+      handleChangeUploadCheque={handleChangeUploadCheque}
+      handleUploadCheque={handleUploadCheque}
+    />
+  );
+
   return (
     <>
       <h1 style={{ color: '#fff', fontWeight: '900' }}>Configure Cheque</h1>
@@ -60,17 +88,19 @@ const Nav1 = () => {
         <Form.Item
           name="chequeImg"
           label="Cheque Image"
-          className="collection-create-form_last-form-item"
+          className="cheque-img-wrapper"
         >
-          <ChequeUploader />
+          <Spin spinning={false} size="large">
+            {renderImageField}
+          </Spin>
         </Form.Item>
-        <Form.Item
+        {/* <Form.Item
           name="chequeImg"
           label="Cheque Image"
           className="collection-create-form_last-form-item"
         >
           <PointOverImageSteps />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item>
           <Button type="primary" htmlType="submit">
             Submit

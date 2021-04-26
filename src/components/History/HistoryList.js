@@ -1,22 +1,22 @@
 import { List, Modal } from 'antd';
 import React, { useState } from 'react';
-import ChequeItem from './ChequeItem';
+import HistoryItem from './HistoryItem';
 const data = [
   {
-    title: 'Ant Design Title 1',
+    title: 'History 1',
   },
   {
-    title: 'Ant Design Title 2',
+    title: 'History 2',
   },
   {
-    title: 'Ant Design Title 3',
+    title: 'History 3',
   },
   {
-    title: 'Ant Design Title 4',
+    title: 'History 4',
   },
 ];
 
-const ChequeList = () => {
+const HistoryList = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleOk = () => {
@@ -34,15 +34,16 @@ const ChequeList = () => {
         style={{ color: '#fff' }}
         itemLayout="horizontal"
         dataSource={data}
-        renderItem={(item) => (
-          <ChequeItem
+        renderItem={(item, index) => (
+          <HistoryItem
             item={item}
+            index={index}
             onTargetChequeItemForDelete={handleDeleteChequeItem}
           />
         )}
       />
       <Modal
-        title="Delete Cheque"
+        title="Delete History"
         okText="Yes"
         cancelText="No"
         okType="danger"
@@ -50,10 +51,10 @@ const ChequeList = () => {
         onOk={handleOk}
         onCancel={handleCancel}
       >
-        Are you sure to delete this cheque?
+        Are you sure to delete this history?
       </Modal>
     </div>
   );
 };
 
-export default ChequeList;
+export default HistoryList;
