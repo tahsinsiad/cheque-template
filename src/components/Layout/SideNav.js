@@ -1,8 +1,8 @@
 import React from 'react';
 import {
   HistoryOutlined,
+  PrinterOutlined,
   UserOutlined,
-  VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,7 @@ const SideNav = () => {
           <Menu.Item key="1" icon={<UserOutlined />}>
             <Link to="/">Nav 1 </Link>
           </Menu.Item>
-          <Menu.Item key="2" icon={<VideoCameraOutlined />}>
+          <Menu.Item key="2" icon={<PrinterOutlined />}>
             <Link to="/print">Print </Link>
           </Menu.Item>
           <Menu.Item key="3" icon={<HistoryOutlined />}>
