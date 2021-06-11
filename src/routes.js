@@ -1,3 +1,5 @@
+import Canvas from './components/Canvas';
+import CanvasWithImg from './components/CanvasWithImg';
 import Nav1 from './components/Nav1';
 import Nav2 from './components/Nav2';
 import PrintReadyCheque from './components/PrintCheque/PrintReadyCheque';
@@ -17,6 +19,7 @@ export const routes = [
   {
     path: '/history',
     sidebar: () => <div>History</div>,
-    main: () => <PrintReadyCheque />,
+    // main: () => <PrintReadyCheque />,
+    main: () => <CanvasWithImg />,
   },
 ];
